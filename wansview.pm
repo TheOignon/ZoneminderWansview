@@ -82,7 +82,7 @@ sub sendCmd
         = $self->{Monitor}->{ControlAddress} =~ /^(.*):(.*)@(.*):(\d+)$/;
 
   $self->printMsg("$xx $yy", 'Tx');
-  my $out = `/usr/bin/node wansview_ptz.js $USER $PASS $ADDR $PORT $xx $yy 2>&1` or Debug("Couldn't exec command : $!");
+  my $out = `/usr/bin/node ZoneminderWansview/wansview_ptz.js $USER $PASS $ADDR $PORT $xx $yy 2>&1` or Debug("Couldn't exec command : $!");
   Debug( "Out : $out" );
 
 }
