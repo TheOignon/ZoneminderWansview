@@ -17,20 +17,21 @@ let device = new onvif.OnvifDevice({
 });
 
 device.init().then(() => {
+
 	let params = {
 	  'speed': {x: xx, y: yy, z: 0.0},
 	  'timeout': 60 // seconds
 	};
 	// Supposed to move the camera for 60 seconds
-	device.ptzMove(params).then(() => {
-	  console.log('Succeeded to move.');
-	  setTimeout(() => {
-	    device.ptzStop().then(() => {
-	      console.log('Succeeded to stop.');
+	device.ptzMove(params).then((result) => {
+	  	console.log('Succeeded to move.');
+	  	setTimeout(() => {
+	    device.ptzStop().then((result) => {
+	     	console.log('Succeeded to stop.');
 	    }).catch((error) => {
-	      console.error(error);
+	     	console.error(error);
 	    });
-	  }, 500);
+		}, 500);
 	}).catch((error) => {
 	  console.error(error);
 	});
