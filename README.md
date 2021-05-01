@@ -1,5 +1,9 @@
 > :warning: I'm not a perl nor nodejs developer
 
+# Compatibility
+
+Those scripts have been tested and are currently used with a Wansview Q3 camera. Some older camera may not be compatible.
+
 # Installation
 
 ```Shell
